@@ -15,6 +15,11 @@ Thumbs.db
 runtime/**
 !runtime/.gitkeep
 
-# Optional local environment files
+# Virtual environment
+.venv/
+venv/
+
+# Optional local environment / config files
 .env
 .env.*
+feishu_config.json

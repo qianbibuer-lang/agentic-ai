@@ -145,15 +145,15 @@ def get_business_value(text: str) -> str | None:
         match = re.search(pattern, text)
         if match:
             return f"{match.group(1)}-{match.group(2)}万"
-    match = re.search(r"(\d+)\s*万以内", text)
-    if match:
-        return f"{match.group(1)}万以内"
-    match = re.search(r"金额在\s*(\d+)\s*万以内", text)
-    if match:
-        return f"{match.group(1)}万以内"
     match = re.search(r"(控制在|控制到|希望先控制在|尽量控制在)\s*(\d+)\s*万以内", text)
     if match:
         return f"{match.group(2)}万以内"
+    match = re.search(r"金额在\s*(\d+)\s*万以内", text)
+    if match:
+        return f"{match.group(1)}万以内"
+    match = re.search(r"(\d+)\s*万以内", text)
+    if match:
+        return f"{match.group(1)}万以内"
     match = re.search(r"合同金额\D{0,8}(\d+)\s*万", text)
     if match:
         return f"约 {match.group(1)} 万"
@@ -933,8 +933,6 @@ def process_transcript(transcript_path: str | Path, context_path: str | Path, ou
         risk_concerns,
     )
     intent_level = "high" if lead_score >= 75 else ("medium" if lead_score >= 60 else "low")
-    if intent_level == "low" and opportunity_stage == "初次接触":
-        opportunity_stage = "初次接触"
 
     high_value_flag = (
         lead_score >= 75
