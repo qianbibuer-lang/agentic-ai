@@ -50,9 +50,9 @@
 ## 2. 配置环境变量（发给龙虾）
 
 > **⚠️ 发送前先自己填好真实值，不要把占位符发出去。**
-> - `GITHUB_TOKEN`：GitHub → Settings → Developer settings → Personal access tokens 获取
-> - `TAVILY_API_KEY`：在 [tavily.com](https://tavily.com) 注册获取
-> - `IMAP_USER` / `IMAP_PASS`（可选）：邮箱后台生成的客户端授权码，不是登录密码
+> - `GITHUB_TOKEN`：获取步骤见 [README — GitHub Token 配置](README.md#github-token-配置)
+> - `TAVILY_API_KEY`：获取步骤见 [README — Tavily 搜索配置](README.md#tavily-搜索配置)
+> - `IMAP_USER` / `IMAP_PASS`：获取步骤见 [README — 邮箱提醒配置](README.md#邮箱提醒配置)
 
 把你的真实值替换进去，发送：
 
@@ -61,20 +61,15 @@
 
 GITHUB_TOKEN=github_pat_xxxxxxxx
 TAVILY_API_KEY=tvly-xxxxxxxx
-
-不需要邮箱提醒的话，IMAP 相关行留空即可。
-```
-
-如果需要邮箱提醒，追加：
-
-```text
-请在 .env 中补充邮箱配置：
-
 IMAP_USER=你的邮箱地址
 IMAP_PASS=你的邮箱授权码
 
-完成后确认 IMAP_USER 已配置（不要把完整授权码发出来）。
+完成后确认：
+1. .env 文件已写入
+2. 各项变量已配置（不要把完整密钥发出来）
 ```
+
+> 如果某项不需要，直接从上面删掉对应行即可。不配置 GitHub Token 会受匿名速率限制；不配置 Tavily 会跳过搜索回填；不配置 IMAP 会跳过邮箱提醒。
 
 ---
 
