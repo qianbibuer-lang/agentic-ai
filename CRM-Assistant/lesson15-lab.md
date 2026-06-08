@@ -155,7 +155,7 @@ dry-run 会生成写表计划，但不会真实写入飞书。
 ```text
 请用 CRM-Assistant 做一次飞书写表 dry-run。
 
-请使用第 4 步生成的 crm_packet.json 和第 3 步配置好的 .env.local。飞书写表请使用用户权限（user identity），不要使用应用权限。这一步只生成写表计划，不要真实写入飞书。输出结果请保存到 runtime/lab15_feishu/dry_run。
+请使用 runtime/lab15_probe/crm_packet.json 和项目根目录的 .env.local。飞书写表请使用用户权限（user identity），不要使用应用权限。这一步只生成写表计划，不要真实写入飞书。输出结果请保存到 runtime/lab15_feishu/dry_run。
 
 执行完后告诉我：
 1. feishu_sync_result.json 是否已生成
@@ -175,7 +175,7 @@ dry-run 会生成写表计划，但不会真实写入飞书。
 ```text
 请用 CRM-Assistant 把本次 CRM 结果真实写入飞书多维表格。
 
-请使用第 4 步生成的 crm_packet.json 和第 3 步配置好的 .env.local。飞书写表请使用用户权限（user identity），不要使用应用权限。这一次请真实写入飞书：客户信息表按客户 ID 新增或更新，商机快照表追加一条商机推进快照。输出结果请保存到 runtime/lab15_feishu/write_once。
+请使用 runtime/lab15_probe/crm_packet.json 和项目根目录的 .env.local。飞书写表请使用用户权限（user identity），不要使用应用权限。这一次请真实写入飞书：客户信息表按客户 ID 新增或更新，商机快照表追加一条商机推进快照。输出结果请保存到 runtime/lab15_feishu/write_once。
 
 执行完成后告诉我：
 1. 是否写入成功
